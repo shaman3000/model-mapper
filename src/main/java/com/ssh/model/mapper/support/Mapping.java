@@ -31,7 +31,7 @@ public class Mapping<D, T> {
     /**
      * Child mapping factory.
      *
-     * @param valueSource Lazy (Supplier based) transformation from current value T to C
+     * @param valueSource Function returning C typed value from current value T
      * @param <C> Child type transformed from T
      * @return Child mapping typed with C
      */
@@ -44,7 +44,7 @@ public class Mapping<D, T> {
     /**
      * Adapter to 'Child mapping factory'
      *
-     * @param valueSource Lazy (Supplier based) transformation from current value T to C
+     * @param valueSource Function returning C typed value from current value T
      * @param mappingCallback Consumer of newly created 'Child mapping typed with C'
      * @param <C> Child type transformed from T
      * @return this
@@ -58,7 +58,7 @@ public class Mapping<D, T> {
     /**
      * Source to Destination mapping factory
      *
-     * @param valueSource Lazy (Supplier based) transformation from current value T to V
+     * @param valueSource Function returning C typed value from current value T
      * @param valueDestination Consumer function for the value
      * @param <V> Value type transformed from T
      * @return this

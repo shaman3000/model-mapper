@@ -1,7 +1,7 @@
 package com.ssh.model.mapper.support;
 
 /**
- * Mapping for nested objects. Extends base mapping with value source..
+ * Mapping for nested objects. Extends base mapping with value source.
  *
  * @param <D> Destination type
  * @param <T> 'This' type
