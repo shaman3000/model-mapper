@@ -65,14 +65,13 @@ public class Mapping<D, T> {
      */
     public <V> Mapping<D, T> map(ValueSource<T, V> valueSource,
                                  ValueDestination<D, V> valueDestination) {
-        Mapping<D, V> mapping = new AttributeMapping<>(valueSource, valueDestination, false);
-        children.add(mapping);
+        children.add(new AttributeMapping<>(valueSource, valueDestination, false));
         return this;
     }
 
     protected void doExecuteChildren(Object source, D destination) {
-        for (Mapping<D, ?> mapping : children) {
-            mapping.doExecute(source, destination);
+        for (Mapping<D, ?> child : children) {
+            child.doExecute(source, destination);
         }
     }
 
